@@ -13,12 +13,22 @@ class Conversations::EventDataPresenter < SimpleDelegator
       messages: push_messages,
       meta: push_meta,
       status: status,
+      private: push_private,
       unread_count: unread_incoming_messages.count,
       **push_timestamps
     }
   end
 
   private
+
+  def push_private
+    if messages && messages.last then
+    messages.last.private
+    else
+      false
+    end
+  end
+    
 
   def push_messages
     [messages.chat.last&.push_event_data].compact
