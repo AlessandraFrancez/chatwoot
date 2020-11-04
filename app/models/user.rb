@@ -131,6 +131,10 @@ class User < ApplicationRecord
     current_account_user&.role
   end
 
+  def limits
+    current_account_user&.limits
+  end
+
   def inviter
     current_account_user&.inviter
   end

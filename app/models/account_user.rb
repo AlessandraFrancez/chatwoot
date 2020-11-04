@@ -7,6 +7,7 @@
 #  role       :integer          default("agent")
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  limits     :integer
 #  account_id :bigint
 #  inviter_id :bigint
 #  user_id    :bigint
