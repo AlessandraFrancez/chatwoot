@@ -122,7 +122,6 @@ import globalConfigMixin from 'shared/mixins/globalConfigMixin';
 import Thumbnail from '../../../../components/widgets/Thumbnail';
 import AddAgent from './AddAgent';
 import EditAgent from './EditAgent';
-
 export default {
   components: {
     AddAgent,
@@ -176,11 +175,9 @@ export default {
       if (this.currentUserId === agent.id) {
         return false;
       }
-
       if (!agent.confirmed) {
         return true;
       }
-
       if (agent.role === 'administrator') {
         return this.verifiedAdministrators().length !== 1;
       }
@@ -198,7 +195,6 @@ export default {
     hideAddPopup() {
       this.showAddPopup = false;
     },
-
     // Edit Function
     openEditPopup(agent) {
       this.showEditPopup = true;
@@ -207,7 +203,6 @@ export default {
     hideEditPopup() {
       this.showEditPopup = false;
     },
-
     // Delete Function
     openDeletePopup(agent) {
       this.showDeletePopup = true;

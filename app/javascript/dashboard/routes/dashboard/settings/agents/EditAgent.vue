@@ -74,7 +74,6 @@ import { mapGetters } from 'vuex';
 import WootSubmitButton from '../../../../components/buttons/FormSubmitButton';
 import Modal from '../../../../components/Modal';
 import Auth from '../../../../api/auth';
-
 export default {
   components: {
     WootSubmitButton,
@@ -123,9 +122,9 @@ export default {
       agentCredentials: {
         email: this.email,
       },
-      agentConversationLimits: 1,
-      values: [1,2,3,4,5,6,7,8,9,10],
       show: true,
+      agentConversationLimits: this.limits,
+      values: [1,2,3,4,5,6,7,8,9,10],
     };
   },
   validations: {

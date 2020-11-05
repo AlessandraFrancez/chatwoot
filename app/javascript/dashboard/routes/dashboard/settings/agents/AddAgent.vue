@@ -42,7 +42,7 @@
             />
           </label>
         </div>
-                <div class="medium-12 columns">
+        <div class="medium-12 columns">
           <label :class="{ error: $v.agentConversationLimits.$error }">
             {{ $t('AGENT_MGMT.ADD.FORM.CONVERSATION_LIMITS.LABEL') }}
             <select v-model="agentConversationLimits">
@@ -79,7 +79,6 @@
 <script>
 import { required, minLength, email } from 'vuelidate/lib/validators';
 import { mapGetters } from 'vuex';
-
 export default {
   props: {
     onClose: {
@@ -92,8 +91,8 @@ export default {
       agentName: '',
       agentEmail: '',
       agentType: 'agent',
-      vertical: 'bottom',
       agentConversationLimits: 1,
+      vertical: 'bottom',
       horizontal: 'center',
       roles: [
         {
@@ -130,7 +129,6 @@ export default {
       required,
     },
   },
-
   methods: {
     showAlert(message) {
       bus.$emit('newToastMessage', message);
