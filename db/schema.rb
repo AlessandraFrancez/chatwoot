@@ -228,6 +228,7 @@ ActiveRecord::Schema.define(version: 2020_09_28_194344) do
     t.bigint "contact_inbox_id"
     t.uuid "uuid", default: -> { "gen_random_uuid()" }, null: false
     t.string "identifier"
+    t.datetime "last_activity_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.index ["account_id", "display_id"], name: "index_conversations_on_account_id_and_display_id", unique: true
     t.index ["account_id"], name: "index_conversations_on_account_id"
     t.index ["contact_inbox_id"], name: "index_conversations_on_contact_inbox_id"
